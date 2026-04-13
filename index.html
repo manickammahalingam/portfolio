@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manickam Mahalingam — MIS Executive & Data Analyst</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --sky: #e0f2fe;
+  --sky2: #bae6fd;
+  --teal: #0d9488;
+  --teal2: #14b8a6;
+  --teal-light: #ccfbf1;
+  --mint: #d1fae5;
+  --blue: #0ea5e9;
+  --blue-dark: #0369a1;
+  --ink: #0c2340;
+  --ink2: #1e3a5f;
+  --muted: #64748b;
+  --muted2: #94a3b8;
+  --surface: #f0f9ff;
+  --card: #ffffff;
+  --border: #e2f0fb;
+  --border2: #bae6fd;
+  --gold: #f59e0b;
+  --green: #059669;
+  --radius: 16px;
+  --radius-sm: 10px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--surface);color:var(--ink);line-height:1.65;overflow-x:hidden}
+body::before{content:'';position:fixed;top:-300px;right:-200px;width:800px;height:800px;background:radial-gradient(circle,rgba(14,165,233,.10) 0%,transparent 65%);pointer-events:none;z-index:0}
+body::after{content:'';position:fixed;bottom:-200px;left:-200px;width:600px;height:600px;background:radial-gradient(circle,rgba(13,148,136,.08) 0%,transparent 65%);pointer-events:none;z-index:0}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(240,249,255,.88);backdrop-filter:blur(16px);border-bottom:1px solid var(--border2);display:flex;align-items:center;justify-content:space-between;padding:0 3rem;height:60px}
+.nav-logo{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;color:var(--teal);text-decoration:none;letter-spacing:-.02em}
+.nav-links{display:flex;gap:2.2rem;list-style:none}
+.nav-links a{font-size:.82rem;font-weight:600;color:var(--muted);text-decoration:none;letter-spacing:.04em;text-transform:uppercase;transition:color .2s}
+.nav-links a:hover{color:var(--teal)}
+.nav-cta{background:var(--teal)!important;color:#fff!important;padding:8px 20px!important;border-radius:100px;font-size:.82rem!important;font-weight:600!important;letter-spacing:.02em!important;text-transform:none!important;transition:background .2s,transform .15s!important}
+.nav-cta:hover{background:var(--blue-dark)!important;transform:translateY(-1px)}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;padding:80px 3rem 4rem;position:relative;z-index:1}
+.hero-inner{max-width:1140px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 400px;gap:5rem;align-items:center}
+.hero-tag{display:inline-flex;align-items:center;gap:8px;background:var(--teal-light);border:1.5px solid rgba(13,148,136,.25);border-radius:100px;padding:6px 16px;font-size:.72rem;font-weight:700;color:var(--teal);letter-spacing:.08em;text-transform:uppercase;margin-bottom:1.5rem;animation:riseUp .7s ease both}
+.live-dot{width:8px;height:8px;border-radius:50%;background:var(--green);animation:blink 2s infinite}
+@keyframes blink{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.4)}}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.8rem,5.5vw,4.4rem);line-height:1.08;font-weight:700;color:var(--ink);margin-bottom:.6rem;animation:riseUp .7s .1s ease both}
+.hero h1 .teal{color:var(--teal);font-style:italic}
+.hero-roles{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:1.5rem;animation:riseUp .7s .2s ease both}
+.role-pill{background:var(--sky);border:1px solid var(--border2);color:var(--blue-dark);border-radius:100px;padding:5px 14px;font-size:.8rem;font-weight:600}
+.hero-desc{font-size:1rem;color:var(--muted);line-height:1.85;max-width:520px;margin-bottom:2.5rem;animation:riseUp .7s .3s ease both}
+.hero-desc strong{color:var(--ink2);font-weight:600}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap;animation:riseUp .7s .4s ease both}
+.btn-teal{display:inline-flex;align-items:center;gap:8px;background:var(--teal);color:#fff;padding:13px 26px;border-radius:100px;font-size:.88rem;font-weight:600;text-decoration:none;transition:all .2s}
+.btn-teal:hover{background:var(--blue-dark);transform:translateY(-2px);box-shadow:0 8px 24px rgba(13,148,136,.3)}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--ink2);padding:12px 24px;border-radius:100px;border:1.5px solid var(--border2);font-size:.88rem;font-weight:600;text-decoration:none;transition:all .2s}
+.btn-ghost:hover{border-color:var(--teal);color:var(--teal);transform:translateY(-2px)}
+@keyframes riseUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+
+/* PHOTO CARD */
+.hero-photo-col{display:flex;flex-direction:column;gap:1.2rem;animation:riseUp .7s .15s ease both}
+.photo-frame{position:relative;background:linear-gradient(135deg,var(--sky) 0%,var(--teal-light) 100%);border-radius:24px;border:2px solid var(--border2);overflow:hidden;aspect-ratio:4/4.6;display:flex;align-items:center;justify-content:center}
+.photo-frame img{width:100%;height:100%;object-fit:cover;display:block}
+.photo-frame::before{content:'';position:absolute;bottom:-40px;right:-40px;width:140px;height:140px;border-radius:50%;background:rgba(13,148,136,.12)}
+.photo-frame::after{content:'';position:absolute;top:-30px;left:-30px;width:100px;height:100px;border-radius:50%;background:rgba(14,165,233,.10)}
+.photo-placeholder{display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center;padding:2rem;position:relative;z-index:1}
+.photo-avatar{width:110px;height:110px;border-radius:50%;background:linear-gradient(135deg,var(--blue) 0%,var(--teal) 100%);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:2.8rem;font-weight:700;color:#fff;margin-bottom:.5rem}
+.photo-placeholder p{font-size:.8rem;color:var(--muted);line-height:1.5}
+.upload-hint{font-size:.72rem;background:var(--sky2);color:var(--blue-dark);padding:5px 12px;border-radius:100px;font-weight:600;margin-top:4px;font-family:'JetBrains Mono',monospace;display:inline-block}
+.mini-stats{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.mini-stat{background:var(--card);border:1px solid var(--border2);border-radius:var(--radius-sm);padding:14px 16px;text-align:center}
+.mini-num{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;color:var(--teal);line-height:1;margin-bottom:3px}
+.mini-lbl{font-size:.72rem;color:var(--muted);font-weight:500}
+
+/* SECTIONS */
+section{padding:6rem 3rem;position:relative;z-index:1}
+.container{max-width:1140px;margin:0 auto}
+.sec-label{display:inline-block;font-size:.7rem;font-weight:700;color:var(--teal);letter-spacing:.12em;text-transform:uppercase;margin-bottom:.5rem;background:var(--teal-light);padding:4px 12px;border-radius:100px}
+.sec-title{font-family:'Playfair Display',serif;font-size:clamp(1.9rem,3vw,2.5rem);color:var(--ink);line-height:1.15;margin-bottom:.6rem}
+.sec-sub{font-size:.95rem;color:var(--muted);max-width:560px}
+
+/* EXPERTISE */
+#expertise{background:#fff}
+.exp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem}
+.exp-card{border-radius:var(--radius);padding:2rem 1.75rem;border:1.5px solid var(--border);transition:all .25s;position:relative;overflow:hidden}
+.exp-card.mis{background:linear-gradient(145deg,#f0f9ff 0%,#e0f2fe 100%);border-color:var(--border2)}
+.exp-card.data{background:linear-gradient(145deg,#fffbeb 0%,#fef3c7 100%);border-color:#fde68a}
+.exp-card.cc{background:linear-gradient(145deg,#f0fdf4 0%,#dcfce7 100%);border-color:#bbf7d0}
+.exp-card:hover{transform:translateY(-6px);box-shadow:0 16px 48px rgba(13,148,136,.12)}
+.exp-icon-wrap{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:1.2rem}
+.mis .exp-icon-wrap{background:rgba(14,165,233,.15)}
+.data .exp-icon-wrap{background:rgba(245,158,11,.15)}
+.cc .exp-icon-wrap{background:rgba(5,150,105,.15)}
+.exp-card h3{font-size:1.02rem;font-weight:700;color:var(--ink);margin-bottom:.6rem}
+.exp-card p{font-size:.84rem;color:var(--muted);line-height:1.75;margin-bottom:1.1rem}
+.chip-row{display:flex;flex-wrap:wrap;gap:5px}
+.chip{padding:3px 10px;border-radius:6px;font-size:.7rem;font-weight:700;letter-spacing:.03em}
+.mis .chip{background:rgba(14,165,233,.12);color:var(--blue-dark)}
+.data .chip{background:rgba(245,158,11,.12);color:#92400e}
+.cc .chip{background:rgba(5,150,105,.12);color:#065f46}
+
+/* TIMELINE */
+#experience{background:var(--surface)}
+.tl{margin-top:3rem;position:relative;padding-left:56px}
+.tl::before{content:'';position:absolute;left:19px;top:8px;bottom:8px;width:2px;background:linear-gradient(180deg,var(--teal2),var(--border2));border-radius:2px}
+.tl-item{margin-bottom:2.5rem;position:relative}
+.tl-dot{position:absolute;left:-47px;top:12px;width:40px;height:40px;border-radius:50%;background:var(--card);border:2px solid var(--border2);display:flex;align-items:center;justify-content:center;font-size:1.1rem;z-index:2;transition:border-color .2s,box-shadow .2s}
+.tl-item:hover .tl-dot{border-color:var(--teal);box-shadow:0 0 0 4px var(--teal-light)}
+.tl-card{background:var(--card);border:1.5px solid var(--border);border-radius:var(--radius);padding:1.6rem 1.8rem;transition:box-shadow .2s,border-color .2s}
+.tl-item:hover .tl-card{box-shadow:0 8px 32px rgba(13,148,136,.10);border-color:var(--border2)}
+.tl-head{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:.5rem;margin-bottom:.3rem}
+.tl-role{font-size:1.02rem;font-weight:700;color:var(--ink)}
+.tl-date{font-size:.72rem;font-weight:600;background:var(--sky);color:var(--blue-dark);border:1px solid var(--border2);border-radius:6px;padding:4px 11px;font-family:'JetBrains Mono',monospace;white-space:nowrap}
+.tl-company{font-size:.87rem;font-weight:600;color:var(--teal);margin-bottom:.8rem}
+.tl-list{padding-left:1.1rem}
+.tl-list li{font-size:.85rem;color:var(--ink2);margin-bottom:.4rem;line-height:1.65}
+.impact-chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:1rem}
+.imp{display:flex;align-items:center;gap:5px;background:var(--teal-light);border:1px solid rgba(13,148,136,.25);border-radius:7px;padding:4px 11px;font-size:.73rem;font-weight:700;color:var(--teal)}
+
+/* SKILLS */
+#skills{background:#fff}
+.skills-wrap{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem;margin-top:3rem}
+.skill-group{background:var(--surface);border:1.5px solid var(--border);border-radius:var(--radius);padding:1.6rem 1.8rem}
+.sk-head{display:flex;align-items:center;gap:10px;margin-bottom:1.2rem;padding-bottom:.9rem;border-bottom:1px solid var(--border2)}
+.sk-icon{font-size:1.1rem}
+.sk-title{font-size:.82rem;font-weight:700;color:var(--ink2);letter-spacing:.05em;text-transform:uppercase}
+.sk-bar-row{margin-bottom:.85rem}
+.sk-bar-top{display:flex;justify-content:space-between;margin-bottom:6px}
+.sk-name{font-size:.84rem;font-weight:500;color:var(--ink2)}
+.sk-lvl{font-size:.68rem;font-weight:700;font-family:'JetBrains Mono',monospace;color:var(--teal);letter-spacing:.03em}
+.bar-track{height:6px;background:var(--sky);border-radius:100px;overflow:hidden}
+.bar-fill{height:100%;border-radius:100px;background:linear-gradient(90deg,var(--teal2),var(--blue));width:0;transition:width 1.2s cubic-bezier(.4,0,.2,1)}
+
+/* ACHIEVEMENTS */
+#achievements{background:var(--surface)}
+.ach-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;margin-top:3rem}
+.ach-card{background:linear-gradient(145deg,#fff 0%,var(--sky) 100%);border:1.5px solid var(--border2);border-radius:var(--radius);padding:2rem 1.5rem;text-align:center;transition:transform .25s,box-shadow .25s;position:relative;overflow:hidden}
+.ach-card::after{content:'';position:absolute;bottom:-20px;right:-20px;width:80px;height:80px;border-radius:50%;background:rgba(13,148,136,.06)}
+.ach-card:hover{transform:translateY(-5px);box-shadow:0 12px 36px rgba(13,148,136,.13)}
+.ach-num{font-family:'Playfair Display',serif;font-size:3rem;font-weight:700;color:var(--teal);line-height:1;margin-bottom:6px}
+.ach-label{font-size:.8rem;color:var(--muted);line-height:1.55;font-weight:500}
+
+/* CONTACT */
+#contact{background:#fff}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;margin-top:3rem}
+.contact-info p{font-size:.95rem;color:var(--muted);line-height:1.85;margin-bottom:2rem}
+.cinfo-item{display:flex;align-items:center;gap:14px;margin-bottom:1.1rem}
+.cinfo-icon{width:44px;height:44px;border-radius:12px;background:var(--teal-light);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;border:1px solid rgba(13,148,136,.2)}
+.cinfo-text a{font-size:.9rem;font-weight:600;color:var(--ink);text-decoration:none}
+.cinfo-text a:hover{color:var(--teal)}
+.cinfo-text span{font-size:.9rem;font-weight:600;color:var(--ink)}
+.cinfo-text small{display:block;font-size:.74rem;color:var(--muted2);margin-top:1px}
+.contact-cta{background:linear-gradient(135deg,var(--teal) 0%,var(--blue) 100%);border-radius:24px;padding:2.5rem;color:#fff;position:relative;overflow:hidden}
+.contact-cta::before{content:'';position:absolute;top:-60px;right:-60px;width:200px;height:200px;border-radius:50%;background:rgba(255,255,255,.07)}
+.contact-cta::after{content:'';position:absolute;bottom:-40px;left:-40px;width:140px;height:140px;border-radius:50%;background:rgba(255,255,255,.05)}
+.contact-cta h3{font-family:'Playfair Display',serif;font-size:1.6rem;margin-bottom:.7rem;position:relative;z-index:1}
+.contact-cta p{font-size:.87rem;opacity:.88;line-height:1.75;margin-bottom:1.8rem;position:relative;z-index:1}
+.roles-list{position:relative;z-index:1}
+.role-row{display:flex;align-items:center;gap:10px;font-size:.87rem;font-weight:600;margin-bottom:9px}
+.check-icon{width:20px;height:20px;border-radius:50%;background:rgba(255,255,255,.25);display:flex;align-items:center;justify-content:center;font-size:.7rem;flex-shrink:0}
+
+/* FOOTER */
+footer{background:var(--ink);color:rgba(255,255,255,.45);text-align:center;padding:1.6rem 2rem;font-size:.8rem;position:relative;z-index:1}
+footer strong{color:rgba(255,255,255,.85);font-weight:600}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  nav{padding:0 1.5rem}
+  .nav-links{display:none}
+  section{padding:4rem 1.5rem}
+  .hero{padding:80px 1.5rem 3rem}
+  .hero-inner{grid-template-columns:1fr;gap:3rem}
+  .hero-photo-col{order:-1;max-width:340px;margin:0 auto;width:100%}
+  .exp-grid{grid-template-columns:1fr}
+  .ach-grid{grid-template-columns:repeat(2,1fr)}
+  .skills-wrap{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:1fr;gap:2.5rem}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="#">MM.</a>
+  <ul class="nav-links">
+    <li><a href="#expertise">Expertise</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#achievements">Achievements</a></li>
+    <li><a href="#contact" class="nav-cta">Hire Me</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-tag"><span class="live-dot"></span> Open to Opportunities</div>
+      <h1>Manickam<br><span class="teal">Mahalingam</span></h1>
+      <div class="hero-roles">
+        <span class="role-pill">MIS Executive</span>
+        <span class="role-pill">Senior MIS Executive</span>
+        <span class="role-pill">Data Analyst</span>
+        <span class="role-pill">Call Center MIS</span>
+      </div>
+      <p class="hero-desc">
+        <strong>9+ years</strong> turning raw business data into decisions that matter. I design MIS reports, Power BI dashboards, and call center intelligence systems for <strong>Banking &amp; Financial Services</strong> — and automate the repetitive work so teams can focus on what counts.
+      </p>
+      <div class="hero-btns">
+        <a href="#experience" class="btn-teal">View My Experience →</a>
+        <a href="mailto:mga9700@gmail.com" class="btn-ghost">📧 Get In Touch</a>
+      </div>
+    </div>
+
+    <div class="hero-photo-col">
+      <div class="photo-frame">
+        <!--
+          HOW TO ADD YOUR PHOTO:
+          1. Save your photo as  photo.jpg  in the same folder as index.html
+          2. Delete the <div class="photo-placeholder"> block below
+          3. Uncomment the img tag below
+        -->
+        <img src="photo.jpg" alt="Manickam Mahalingam"> 
+        
+      </div>
+      <div class="mini-stats">
+        <div class="mini-stat"><div class="mini-num">9+</div><div class="mini-lbl">Years Experience</div></div>
+        <div class="mini-stat"><div class="mini-num">10+</div><div class="mini-lbl">Power BI Dashboards</div></div>
+        <div class="mini-stat"><div class="mini-num">90%</div><div class="mini-lbl">Reports Automated</div></div>
+        <div class="mini-stat"><div class="mini-num">40%</div><div class="mini-lbl">Efficiency Improved</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERTISE -->
+<section id="expertise">
+  <div class="container">
+    <div class="sec-label">What I Do</div>
+    <h2 class="sec-title">Three Areas of Deep Expertise</h2>
+    <p class="sec-sub">Covering the full data lifecycle — from raw logs to executive dashboards to live call center systems.</p>
+    <div class="exp-grid">
+      <div class="exp-card mis">
+        <div class="exp-icon-wrap">📊</div>
+        <h3>MIS Reporting &amp; Dashboards</h3>
+        <p>End-to-end MIS reporting and automation for Banking Loans, Credit Cards, and Sales teams. I replace manual Excel work with live Power BI dashboards that management actually uses.</p>
+        <div class="chip-row">
+          <span class="chip">Power BI</span><span class="chip">DAX</span><span class="chip">Power Query</span><span class="chip">KPI Tracking</span><span class="chip">Excel Dashboards</span><span class="chip">SLA Reporting</span>
+        </div>
+      </div>
+      <div class="exp-card data">
+        <div class="exp-icon-wrap">🔍</div>
+        <h3>Data Analysis &amp; Automation</h3>
+        <p>Cleaning messy multi-source data, building ETL workflows, and automating reports with Power Query, VBA macros, and Python — saving hours of manual effort every week.</p>
+        <div class="chip-row">
+          <span class="chip">SQL</span><span class="chip">ETL</span><span class="chip">Data Modeling</span><span class="chip">Trend Analysis</span><span class="chip">VBA (basics)</span><span class="chip">Python pandas</span>
+        </div>
+      </div>
+      <div class="exp-card cc">
+        <div class="exp-icon-wrap">☎️</div>
+        <h3>Call Center Systems &amp; MIS</h3>
+        <p>Installing and managing VICIdial dialer systems, SIP/VoIP infrastructure, and call routing — plus building call center MIS dashboards tracking agent productivity and conversions.</p>
+        <div class="chip-row">
+          <span class="chip">VICIdial Admin</span><span class="chip">SIP Config</span><span class="chip">VoIP Setup</span><span class="chip">Call Routing</span><span class="chip">Campaign Mgmt</span><span class="chip">Agent Analytics</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="container">
+    <div class="sec-label">Career Journey</div>
+    <h2 class="sec-title">Professional Experience</h2>
+    <p class="sec-sub">9 years across MIS, data analysis, call center operations, and technical support in Financial Services.</p>
+    <div class="tl">
+
+      <div class="tl-item">
+        <div class="tl-dot">📈</div>
+        <div class="tl-card">
+          <div class="tl-head"><div class="tl-role">MIS Analyst / Data Analyst</div><span class="tl-date">Jan 2024 – Dec 2025</span></div>
+          <div class="tl-company">BZ Finserv Pvt Ltd — Chennai</div>
+          <ul class="tl-list">
+            <li>Designed and developed Power BI dashboards for KPI tracking, business performance, and financial reporting.</li>
+            <li>Performed ETL operations — extracting, transforming, and loading data from multiple source systems.</li>
+            <li>Applied DAX formulas to create calculated columns and measures for Power BI performance reports.</li>
+            <li>Automated recurring MIS reports using Power Query and Advanced Excel — reduced manual effort by 40%.</li>
+            <li>Conducted trend analysis, variance analysis, and forecasting to support senior management decisions.</li>
+            <li>Ensured data accuracy, validation, and governance across all reporting systems.</li>
+          </ul>
+          <div class="impact-chips">
+            <span class="imp">✦ 10+ Dashboards Built</span>
+            <span class="imp">✦ 40% Efficiency Gain</span>
+            <span class="imp">✦ 25% Conversion Uplift</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot">🏦</div>
+        <div class="tl-card">
+          <div class="tl-head"><div class="tl-role">MIS Executive — Banking, Credit Cards &amp; Call Center</div><span class="tl-date">Jul 2021 – Dec 2023</span></div>
+          <div class="tl-company">BZ Finserv Pvt Ltd — Chennai</div>
+          <ul class="tl-list">
+            <li>Managed end-to-end MIS reporting for Banking Loans, Credit Card Sales, and Call Center — 100% SLA adherence.</li>
+            <li>Generated daily, weekly, monthly reports tracking Lead Conversion Rate, Call Volume, Agent Productivity, Revenue vs Target.</li>
+            <li>Built dynamic Excel dashboards using Pivot Tables, VLOOKUP, SUMIF, and conditional formatting.</li>
+            <li>Handled CRM and database management — data uploading, cleaning, validation, and de-duplication.</li>
+            <li>Installed, configured, and maintained VICIdial dialer — managed SIP, VoIP, call routing, campaigns, and user profiles.</li>
+            <li>Troubleshot dialer and call quality issues to maintain high availability of call center systems.</li>
+          </ul>
+          <div class="impact-chips">
+            <span class="imp">✦ 100% SLA Met</span>
+            <span class="imp">✦ VICIdial Admin</span>
+            <span class="imp">✦ Multi-domain MIS</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot">🔧</div>
+        <div class="tl-card">
+          <div class="tl-head"><div class="tl-role">Senior Support Engineer</div><span class="tl-date">Jan 2019 – Dec 2021</span></div>
+          <div class="tl-company">BankZone — Chennai</div>
+          <ul class="tl-list">
+            <li>Supported MIS reporting systems and backend data processes for financial services operations.</li>
+            <li>Managed system performance monitoring and troubleshooting within SLA commitments.</li>
+            <li>Collaborated with IT and business teams for database maintenance and reporting enhancements.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot">💻</div>
+        <div class="tl-card">
+          <div class="tl-head"><div class="tl-role">Desktop Support Engineer</div><span class="tl-date">Aug 2016 – Dec 2018</span></div>
+          <div class="tl-company">BankZone — Chennai</div>
+          <ul class="tl-list">
+            <li>Provided technical support for hardware, software, and network issues across the organisation.</li>
+            <li>Installed and configured systems and IT infrastructure; assisted with data handling and reports.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="container">
+    <div class="sec-label">Technical Skills</div>
+    <h2 class="sec-title">Tools &amp; Technologies</h2>
+    <p class="sec-sub">Honest skill levels — what I can reliably deliver in a work environment.</p>
+    <div class="skills-wrap">
+      <div class="skill-group">
+        <div class="sk-head"><span class="sk-icon">📊</span><span class="sk-title">MIS &amp; Reporting</span></div>
+        <div class="sk-bar-row"><div class="sk-bar-top"><span class="sk-name">Advanced Excel (Pivot, VLOOKUP)</span><span class="sk-lvl">EXPERT</span></div><div class="bar-track"><div class="bar-fill" data-w="92"></div></div></div>
+        <div class="sk-bar-row"><div class="sk-bar-top"><span class="sk-name">MIS Reporting &amp; Dashboard Design</span><span class="sk-lvl">EXPERT</span></div><div class="bar-track"><div class="bar-fill" data-w="90"></div></div></div>
+        <div class="sk-bar-row"><div class="sk-bar-top"><span class="sk-name">Power BI &amp; Power Query</span><span class="sk-lvl">PROFICIENT</span></div><div class="bar-track"><div class="bar-fill" data-w="74"></div></div></div>
+        <div class="sk-bar-row"><div class="sk-bar-top"><span class="sk-name">DAX &amp; Data Modeling</span><span class="sk-lvl">INTERMEDIATE</span></div><div class="bar-track"><div class="bar-fill" data-w="60"></div></div></div>
+        <div class="sk-bar-row"><div class="sk-bar-top"><span class="sk-name">KPI Tracking &amp; Variance Analysis</span><span class="sk-lvl">EXPERT</span></div><div class="bar-track"><div class="bar-fill" data-w="88"></div></div></div>
+      </div>
+      <div class="skill-group">
+        <div class="sk-head"><span class="sk-icon">🗄️</span><span class="sk-title">Data &amp; Automation</span></div>
+        <div class="sk-bar-row"><div class="sk-bar-top"><span class="sk-name">SQL (queries, joins, aggregation)</span><span class="sk-lvl">INTERMEDIATE</span></div><div class="bar-track"><div class="bar-fill" data-w="58"></div></div></div>
+        <div class="sk-bar-row"><div class="sk-bar-top"><span class="sk-name">ETL &amp; Data Cleaning</span><span class="sk-lvl">PROFICIENT</span></div><div class="bar-track"><div class="bar-fill" data-w="78"></div></div></div>
+        <div class="sk-bar-row"><div class="sk-bar-top"><span class="sk-name">VBA Macros (Excel automation)</span><span class="sk-lvl">BASIC</span></div><div class="bar-track"><div class="bar-fill" data-w="42"></div></div></div>
+        <div class="sk-bar-row"><div class="sk-bar-top"><span class="sk-name">Python – pandas (data tasks)</span><span class="sk-lvl">BASIC</span></div><div class="bar-track"><div class="bar-fill" data-w="38"></div></div></div>
+        <div class="sk-bar-row"><div class="sk-bar-top"><span class="sk-name">CRM &amp; Database Management</span><span class="sk-lvl">PROFICIENT</span></div><div class="bar-track"><div class="bar-fill" data-w="76"></div></div></div>
+      </div>
+      <div class="skill-group">
+        <div class="sk-head"><span class="sk-icon">☎️</span><span class="sk-title">Call Center Systems</span></div>
+        <div class="sk-bar-row"><div class="sk-bar-top"><span class="sk-name">VICIdial Dialer Administration</span><span class="sk-lvl">EXPERT</span></div><div class="bar-track"><div class="bar-fill" data-w="88"></div></div></div>
+        <div class="sk-bar-row"><div class="sk-bar-top"><span class="sk-name">SIP Configuration &amp; VoIP</span><span class="sk-lvl">PROFICIENT</span></div><div class="bar-track"><div class="bar-fill" data-w="76"></div></div></div>
+        <div class="sk-bar-row"><div class="sk-bar-top"><span class="sk-name">Call Routing &amp; Campaign Mgmt</span><span class="sk-lvl">PROFICIENT</span></div><div class="bar-track"><div class="bar-fill" data-w="80"></div></div></div>
+        <div class="sk-bar-row"><div class="sk-bar-top"><span class="sk-name">Call Center MIS &amp; Analytics</span><span class="sk-lvl">EXPERT</span></div><div class="bar-track"><div class="bar-fill" data-w="90"></div></div></div>
+      </div>
+      <div class="skill-group">
+        <div class="sk-head"><span class="sk-icon">🏦</span><span class="sk-title">Domain Knowledge</span></div>
+        <div class="sk-bar-row"><div class="sk-bar-top"><span class="sk-name">Banking &amp; Financial Services</span><span class="sk-lvl">EXPERT</span></div><div class="bar-track"><div class="bar-fill" data-w="92"></div></div></div>
+        <div class="sk-bar-row"><div class="sk-bar-top"><span class="sk-name">Credit Card &amp; Loans MIS</span><span class="sk-lvl">EXPERT</span></div><div class="bar-track"><div class="bar-fill" data-w="88"></div></div></div>
+        <div class="sk-bar-row"><div class="sk-bar-top"><span class="sk-name">SLA Management &amp; Reporting</span><span class="sk-lvl">EXPERT</span></div><div class="bar-track"><div class="bar-fill" data-w="90"></div></div></div>
+        <div class="sk-bar-row"><div class="sk-bar-top"><span class="sk-name">Stakeholder Communication</span><span class="sk-lvl">STRONG</span></div><div class="bar-track"><div class="bar-fill" data-w="82"></div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACHIEVEMENTS -->
+<section id="achievements">
+  <div class="container">
+    <div class="sec-label">Impact &amp; Results</div>
+    <h2 class="sec-title">Key Achievements</h2>
+    <p class="sec-sub">Real numbers from real work — not estimates.</p>
+    <div class="ach-grid">
+      <div class="ach-card"><div class="ach-num">90%</div><div class="ach-label">of MIS reports automated — eliminating repetitive manual work</div></div>
+      <div class="ach-card"><div class="ach-num">40%</div><div class="ach-label">improvement in team efficiency through automation</div></div>
+      <div class="ach-card"><div class="ach-num">70%</div><div class="ach-label">faster data processing via optimised data models</div></div>
+      <div class="ach-card"><div class="ach-num">25%</div><div class="ach-label">uplift in sales conversion through data-driven insights</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="sec-label">Let's Connect</div>
+    <h2 class="sec-title">Available for New Roles</h2>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <p>I'm actively looking for MIS Executive, Senior MIS Executive, and entry-level Data Analyst roles in Chennai. Feel free to reach out — I respond quickly.</p>
+        <div class="cinfo-item">
+          <div class="cinfo-icon">📧</div>
+          <div class="cinfo-text"><a href="mailto:mga9700@gmail.com">mga9700@gmail.com</a><small>Email — preferred contact</small></div>
+        </div>
+        <div class="cinfo-item">
+          <div class="cinfo-icon">📱</div>
+          <div class="cinfo-text"><span>+91-8438436294</span><small>Mobile / WhatsApp</small></div>
+        </div>
+        <div class="cinfo-item">
+          <div class="cinfo-icon">📍</div>
+          <div class="cinfo-text"><span>Chennai, Tamil Nadu, India</span><small>Open to hybrid &amp; on-site roles</small></div>
+        </div>
+      </div>
+      <div class="contact-cta">
+        <h3>Roles I'm Open To</h3>
+        <p>If your team needs someone who owns MIS reporting, builds dashboards, and keeps data clean and timely — let's talk.</p>
+        <div class="roles-list">
+          <div class="role-row"><span class="check-icon">✓</span> MIS Executive</div>
+          <div class="role-row"><span class="check-icon">✓</span> Senior MIS Executive</div>
+          <div class="role-row"><span class="check-icon">✓</span> Data Analyst (Entry – Mid level)</div>
+          <div class="role-row"><span class="check-icon">✓</span> Call Center MIS Analyst</div>
+          <div class="role-row"><span class="check-icon">✓</span> Reporting Analyst – BFSI</div>
+          <div class="role-row"><span class="check-icon">✓</span> Business Intelligence Analyst</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Built by <strong>Manickam Mahalingam</strong> &nbsp;·&nbsp; Chennai, India &nbsp;·&nbsp; mga9700@gmail.com
+</footer>
+
+<script>
+  const fills = document.querySelectorAll('.bar-fill');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.width = e.target.dataset.w + '%';
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.3 });
+  fills.forEach(f => io.observe(f));
+
+  const sections = document.querySelectorAll('section[id]');
+  const navAs = document.querySelectorAll('.nav-links a:not(.nav-cta)');
+  window.addEventListener('scroll', () => {
+    let cur = '';
+    sections.forEach(s => { if (window.scrollY >= s.offsetTop - 100) cur = s.id; });
+    navAs.forEach(a => { a.style.color = a.getAttribute('href') === '#' + cur ? 'var(--teal)' : ''; });
+  });
+</script>
+</body>
+</html>
